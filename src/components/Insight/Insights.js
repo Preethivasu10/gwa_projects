@@ -11,7 +11,7 @@ function Insights() {
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
-            if (screenWidth < 1025) {
+            if (screenWidth < 1127) {
                 setVisibleCards([0]); 
             } else {
                 setVisibleCards([0, 1]); 
@@ -27,21 +27,20 @@ function Insights() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
     const handleLeftClick = () => {
         setVisibleCards(prevCards => {
             const newCards = prevCards.map(index => index - 1);
-            return newCards[0] < 0 ? prevCards : newCards;
+            return newCards.map(index => (index < 0 ? totalCards - 1 : index));
         });
     };
-
+    
     const handleRightClick = () => {
         setVisibleCards(prevCards => {
             const newCards = prevCards.map(index => index + 1);
-            return newCards[newCards.length - 1] >= totalCards ? prevCards : newCards;
+            return newCards.map(index => (index >= totalCards ? 0 : index));
         });
     };
-
+    
     const isFirstCardVisible = visibleCards.includes(0);
     const isLastCardVisible = visibleCards.includes(totalCards - 1);
 

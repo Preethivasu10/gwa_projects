@@ -1228,6 +1228,25 @@ gap: 0px;
     background: url('/public/insight2.jpg') center no-repeat;
     background-size: cover;
     }
+    .text-box-person-two{
+        width:200px;
+        height: auto;
+    gap: 12px;
+     opacity: 1;
+    display: flex;
+    margin-top: 60px;
+    
+    }  
+    .text-box-person-one{
+        width:  177px;
+        height: auto;
+    gap: 12px;
+     opacity: 1;
+    display: flex;
+    margin-top: 60px;
+    
+    }  
+
    
 
 }
